@@ -4,10 +4,13 @@ services:
     env: node
     plan: free
     region: singapore
-    buildCommand: "npm install"
-    startCommand: "npm start"
+    buildCommand: npm rebuild sqlite3 --build-from-source && npm install
+    startCommand: npm start
     envVars:
+      - key: NODE_VERSION
+        value: 20
       - key: JWT_SECRET
         generateValue: true
       - key: PORT
         value: 3000
+
