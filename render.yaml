@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: todolink-backend
+    env: node
+    plan: free
+    region: singapore
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3000
